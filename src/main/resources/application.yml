@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    username: root
+    password: Lyc123456
+    url: jdbc:mysql://localhost:3306/kejia
+    driver-class-name: com.mysql.cj.jdbc.Driver
