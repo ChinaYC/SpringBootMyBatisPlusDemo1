@@ -1,5 +1,6 @@
 package com.liulog.demo1;
 
+import com.liulog.demo1.dao.UserDao;
 import com.liulog.demo1.service.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +15,16 @@ class Demo1ApplicationTests {
     @Autowired
     UserServiceImpl userService;
 
+    @Autowired
+    UserDao userDao;
+
     @Test
     void contextLoads() {
         hello.say();
-        userService.addUser("liam","L123456");
+        userService.delUserByName("lia");
+        userService.addUser("liam0","L123456");
 
+        userService.findUserByName("liam");
     }
 //
 //    @Test
