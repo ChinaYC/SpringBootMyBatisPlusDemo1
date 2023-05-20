@@ -7,6 +7,8 @@ import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl {
 
@@ -32,7 +34,20 @@ public class UserServiceImpl {
         UserPojo pojo = userDao.selectOne(new QueryWrapper<UserPojo>().like("username",username));
         System.out.println(pojo);
     }
+    public void findlist(String username){
+//        userDao.selectOne(new QueryWrapper<UserPojo>().eq("username",username));
+        List<UserPojo> pojo = userDao.selectList(new QueryWrapper<UserPojo>().like("username",username));
+        System.out.println(pojo);
+        pojo.forEach(item ->{
+            System.out.println(item);
+        });
+    }
 
+    public void updateUserByName(String username,String pw){
+        UserPojo pojo = userDao.selectById(username);
+        pojo.setPassword(pw);
+        userDao.update(pojo,new QueryWrapper<UserPojo>().eq("username",username));
+    }
 
 
 }

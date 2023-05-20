@@ -21,10 +21,11 @@ class Demo1ApplicationTests {
     @Test
     void contextLoads() {
         hello.say();
-        userService.delUserByName("lia");
-        userService.addUser("liam0","L123456");
-
-        userService.findUserByName("liam");
+//        userService.delUserByName("lia");
+        userService.addUser("liam6","L123456");
+        userService.updateUserByName("liam1","L212");
+//        userService.findUserByName("liam");
+        userService.findlist("liam");
     }
 //
 //    @Test
