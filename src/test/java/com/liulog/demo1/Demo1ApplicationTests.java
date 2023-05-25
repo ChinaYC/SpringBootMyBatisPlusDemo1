@@ -22,7 +22,7 @@ class Demo1ApplicationTests {
     void contextLoads() {
         hello.say();
 //        userService.delUserByName("lia");
-        userService.addUser("liam6","L123456");
+//        userService.addUser("liam6","L123456");
         userService.updateUserByName("liam1","L212");
 //        userService.findUserByName("liam");
         userService.findlist("liam");
