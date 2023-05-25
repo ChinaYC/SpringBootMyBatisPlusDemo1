@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @TableName(value = "user_liam")
 public class UserPojo {
 
-    //雪花算法自动生成assign
+    //雪花算法自动生成assign git
 //    @TableId(value = "username",type = IdType.ASSIGN_ID)
     @TableId(value = "username",type = IdType.NONE)
     private String username ;
