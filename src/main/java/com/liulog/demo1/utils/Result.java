@@ -10,7 +10,6 @@ public class Result {
         Map<String,Object> map = new HashMap<>();
         map.put("code",code);
         map.put("Message",message);
-//        map.put("date","");
         String s = JSONObject.toJSONString(map);
         return s;
     }
