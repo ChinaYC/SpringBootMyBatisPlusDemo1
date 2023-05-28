@@ -3,7 +3,6 @@ package com.liulog.demo1.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.liulog.demo1.dao.UserDao;
 import com.liulog.demo1.pojo.UserPojo;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,10 +28,11 @@ public class UserServiceImpl {
         userDao.delete(new QueryWrapper<UserPojo>().like("username",username));
     }
 
-    public void findUserByName(String username){
+    public String findUserByName(String username1){
 //        userDao.selectOne(new QueryWrapper<UserPojo>().eq("username",username));
-        UserPojo pojo = userDao.selectOne(new QueryWrapper<UserPojo>().like("username",username));
+        UserPojo pojo = userDao.selectOne(new QueryWrapper<UserPojo>().like("username",username1));
         System.out.println(pojo);
+        return String.valueOf(pojo.getUsername());
     }
     public void findlist(String username){
 //        userDao.selectOne(new QueryWrapper<UserPojo>().eq("username",username));
