@@ -1,5 +1,6 @@
 package com.liulog.demo1.service;
 
+import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.liulog.demo1.dao.UserDao;
 import com.liulog.demo1.pojo.UserPojo;
@@ -37,9 +38,11 @@ public class UserServiceImpl {
     public String findlist(String username){
 //        userDao.selectOne(new QueryWrapper<UserPojo>().eq("username",username));
         List<UserPojo> pojo = userDao.selectList(new QueryWrapper<UserPojo>().like("username",username));
-        System.out.println(pojo);
 
-        return username;
+        String result = JSON.toJSONString(pojo);
+        System.out.println(result);
+        return result;
+
     }
 
     public void updateUserByName(String username,String pw){

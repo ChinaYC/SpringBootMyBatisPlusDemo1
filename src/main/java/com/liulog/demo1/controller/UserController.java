@@ -46,9 +46,9 @@ public class UserController {
 //        return item.toString();
     }
 
-    @RequestMapping(value = "/addUser/{username}",method = RequestMethod.GET)
+    @RequestMapping(value = "/otheraddUser/{username}",method = RequestMethod.GET)
     public String OtherfindUserByName(@PathVariable("username") String username){
-        String item = userService.findUserByName(username);
+        String item = userService.findlist(username);
         return Result.okGetStiringByDate("201","url查询成功",item);
     }
 
