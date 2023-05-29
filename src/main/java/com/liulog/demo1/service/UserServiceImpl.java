@@ -34,13 +34,14 @@ public class UserServiceImpl {
         System.out.println(pojo);
         return String.valueOf(pojo.getUsername());
     }
-    public void findlist(String username){
+    public String findlist(String username){
 //        userDao.selectOne(new QueryWrapper<UserPojo>().eq("username",username));
         List<UserPojo> pojo = userDao.selectList(new QueryWrapper<UserPojo>().like("username",username));
         System.out.println(pojo);
         pojo.forEach(item ->{
             System.out.println(item);
         });
+        return username;
     }
 
     public void updateUserByName(String username,String pw){
