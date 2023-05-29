@@ -21,7 +21,7 @@ public class UserPojo {
 
     @TableField(value = "password")
     private String password ;
-
+//
 //    @TableField(exist = false)
 //    private String hello;
 }
