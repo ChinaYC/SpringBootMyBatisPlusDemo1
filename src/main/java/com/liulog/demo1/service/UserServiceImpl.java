@@ -38,9 +38,7 @@ public class UserServiceImpl {
 //        userDao.selectOne(new QueryWrapper<UserPojo>().eq("username",username));
         List<UserPojo> pojo = userDao.selectList(new QueryWrapper<UserPojo>().like("username",username));
         System.out.println(pojo);
-        pojo.forEach(item ->{
-            System.out.println(item);
-        });
+
         return username;
     }
 
