@@ -60,11 +60,15 @@ public class UserController {
 
     @RequestMapping(value = "/deletUserByName",method = RequestMethod.DELETE)
     public String delUserByName(@RequestParam("username") String username){
-        userService.delUserByName(username);
+        getUserService().delUserByName(username);
         return Result.okGetStiring("200like","like删除成功");
     }
 
+    private UserServiceImpl getUserService() {
+        return userService;
+    }
 
+    //不写参数就是全部搜索
     @RequestMapping(value = "/search",method = RequestMethod.GET)
     public String search(@RequestParam("username") String username){
         String item = userService.findUserByName(username);

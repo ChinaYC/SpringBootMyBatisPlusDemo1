@@ -12,6 +12,9 @@ public interface UserDao extends BaseMapper<UserPojo> {
 
 //
 //    @Select("SELECT * FROM user")
-//    public List<UserPojo> selectUser;
+//    public List<UserPojo> selectUser
+    @Select("select * from jojo where username Like 'liam%';")
+    UserPojo seles2();
+
 
 }

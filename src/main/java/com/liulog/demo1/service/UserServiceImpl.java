@@ -18,6 +18,7 @@ public class UserServiceImpl {
     public void addUser(String username,String password){
 
         userDao.insert(new UserPojo(username,password));
+//      return userDao.insert(new UserPojo(username)>0?"susuccess":"fall");
     }
 
     public void delUserById(String username){
@@ -30,6 +31,7 @@ public class UserServiceImpl {
     }
 
     public String findUserByName(String username){
+        //注意虽然只找一个 但因为用的like 所以会找所有含有的，但只会返回一个数
 //        userDao.selectOne(new QueryWrapper<UserPojo>().eq("username",username));
         UserPojo pojo = userDao.selectOne(new QueryWrapper<UserPojo>().like("username",username));
         System.out.println(pojo);
@@ -51,5 +53,8 @@ public class UserServiceImpl {
         userDao.update(pojo,new QueryWrapper<UserPojo>().eq("username",username));
     }
 
+    public  UserPojo userSelect(){
+        return userDao.seles2();
+    }
 
 }
